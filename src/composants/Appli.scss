@@ -1,11 +1,20 @@
 .Appli {
-  .ajoutRessource {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #333;
-    &:hover {
-      background-color: #444;
+  .contenu-principal{
+    .menuTri{
+      min-width: 200px;
+      margin-left: 8vw;
+      margin-top: 50px;
+    }
+    .ajoutRessource {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #333;
+      &:hover {
+        background-color: #444;
+      }
     }
   }
+  
+
 }

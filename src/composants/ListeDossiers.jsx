@@ -3,10 +3,13 @@ import Dossier from './Dossier';
 import * as crudDossiers from '../services/crud-dossiers';
 import { useState, useEffect } from 'react';
 
-export default function ListeDossiers({utilisateur, etatDossiers}) {
+export default function ListeDossiers({utilisateur, etatDossiers, etatTri}) {
   // État des dossiers (vient du composant Appli)
   const [dossiers, setDossiers] = etatDossiers;
 
+  //État du tri
+  const [tri, setTri] = etatTri;
+  
   // Lire les dossiers dans Firestore et forcer le réaffichage du composant
   // Remarquez que ce code est dans un useEffect() car on veut l'exécuter 
   // UNE SEULE FOIS (regardez le tableau des 'deps' - dépendances) et ceci 
@@ -15,11 +18,13 @@ export default function ListeDossiers({utilisateur, etatDossiers}) {
   // forcé par la mutation de l'état des dossiers
   useEffect(
     () => {
-      crudDossiers.lireTout(utilisateur.uid).then(
-        dossiers => setDossiers(dossiers)
+      crudDossiers.lireTout(utilisateur.uid, tri).then(
+        dossiers => setDossiers(dossiers),
+        console.log(tri)
       )
-    }, []
+    }, [tri]
   );
+
 
   /**
    * Gérer le clic du bouton 'supprimer' correspondant au dossier identifié en argument
