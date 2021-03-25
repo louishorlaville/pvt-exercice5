@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    //Exercice #3
+    match /ex3-produits/{document=**}{
+    	allow read;
+    }
+    
+    //Travaille de classe signets
+    //Profil de nouveau utilisateur
+    match /utilisateurs/{idUtil} {
+     allow read, update, delete: if request.auth != null && request.auth.uid == idUtil;
+     allow create: if request.auth != null;
+    }
+    
+    //Collection 'dossiers'
+    match /utilisateurs/{idUtil}/Dossiers/{document=**}{ 
+    	allow write, read: if request.auth != null && request.auth.uid == idUtil;
+    }
+    
+    //Exercice #4
+    //profil de nouveau utilisateur
+    match /utilisateurs-ex4/{idUtil} {
+     allow read, update, delete: if request.auth != null && request.auth.uid == idUtil;
+     allow create: if request.auth != null;
+    }
+    
+    //Collection 'dossiers'
+    match /utilisateurs-ex4/{idUtil}/{document=**}{ 
+    	allow write, read: if request.auth != null && request.auth.uid == idUtil;
+    }
+    
+    //Exercice #5
+    //profil de nouveau utilisateur
+    match /utilisateurs-ex5/{idUtil} {
+     allow read, update, delete: if request.auth != null && request.auth.uid == idUtil;
+     allow create: if request.auth != null;
+    }
+    
+    //Collection 'dossiers'
+    match /utilisateurs-ex5/{idUtil}/{document=**}{ 
+    	allow write, read: if request.auth != null && request.auth.uid == idUtil;
+    }
+    
+  }
+}
