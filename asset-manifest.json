@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/pvt-exercice5/static/css/main.ddfed995.chunk.css",
+    "main.js": "/pvt-exercice5/static/js/main.e70cf525.chunk.js",
+    "runtime-main.js": "/pvt-exercice5/static/js/runtime-main.c988086c.js",
+    "static/css/2.6da788ff.chunk.css": "/pvt-exercice5/static/css/2.6da788ff.chunk.css",
+    "static/js/2.ab690fdf.chunk.js": "/pvt-exercice5/static/js/2.ab690fdf.chunk.js",
+    "index.html": "/pvt-exercice5/index.html",
+    "static/js/2.ab690fdf.chunk.js.LICENSE.txt": "/pvt-exercice5/static/js/2.ab690fdf.chunk.js.LICENSE.txt",
+    "static/media/couverture.2dc9ece9.webp": "/pvt-exercice5/static/media/couverture.2dc9ece9.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c988086c.js",
+    "static/css/2.6da788ff.chunk.css",
+    "static/js/2.ab690fdf.chunk.js",
+    "static/css/main.ddfed995.chunk.css",
+    "static/js/main.e70cf525.chunk.js"
+  ]
+}
